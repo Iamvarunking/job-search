@@ -32,7 +32,7 @@ export class JobSearch {
     this.startLoading();
     this.resultsContainer.innerHTML = '';
     const { search, location } = extractFormData(this.searchForm);
-    fetch(`http://localhost:3000/?search=${search}&location=${location}&country=gb`)
+    fetch(`https://job-search-vs.herokuapp.com/?search=${search}&location=${location}&country=gb`)
       .then(response => response.json())
       .then(({ results }) => {
         this.stopLoading();
